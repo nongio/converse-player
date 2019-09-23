@@ -1,0 +1,60 @@
+{
+  "story": {
+    "theme": "green",
+    "users": [
+      {
+        "id": 1,
+        "name": "Brandon Johnson",
+        "avatar": "http://normalimage.cdn.ucbt.net/person_5157.png"
+      },
+      {
+        "id": 2,
+        "name": "Boaty McBoatface",
+        "avatar": "https://static01.nyt.com/images/2016/03/22/nytnow/22xp-boaty/22xp-boaty-articleLarge.jpg?quality=75&auto=webp&disable=upscale"
+      }
+    ],
+    "timeline": [
+      {
+        "type": "context",
+        "description": "Back at home...",
+        "timestamp": "0"
+      },
+      {
+        "type": "message",
+        "uid": "1",
+        "content": {
+          "type": "text",
+          "data": "Hey! I jost got home and I relised that I forgot my phone in the office..."
+        },
+        "time": "19:02"
+      },
+      {
+        "type": "message",
+        "uid": "2",
+        "content": {
+          "type": "text",
+          "data": "who is texting?"
+        },
+        "time": "19:03"
+      },
+      {
+        "type": "message",
+        "uid": "1",
+        "content": {
+          "type": "text",
+          "data": "for god sake it's me"
+        },
+        "time": "19:05"
+      },
+      {
+        "type": "message",
+        "uid": "2",
+        "content": {
+          "type": "text",
+          "data": "??"
+        },
+        "time": "19:07"
+      }
+    ]
+  }
+}
