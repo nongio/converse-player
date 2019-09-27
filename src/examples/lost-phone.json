@@ -13,6 +13,7 @@
         "avatar": "https://static01.nyt.com/images/2016/03/22/nytnow/22xp-boaty/22xp-boaty-articleLarge.jpg?quality=75&auto=webp&disable=upscale"
       }
     ],
+    "main_user_id": 1,
     "timeline": [
       {
         "type": "context",

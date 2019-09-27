@@ -1,6 +1,45 @@
 .main{
-  width: 500px;
-  height: 500px;
-  border: 2px solid black;
+    width: 100%;
+    height: auto;
+    min-height: 1rem;
+    border: 1px solid green;
+    padding: 5px;
+    box-sizing: border-box;
 }
 
+.username {
+
+    font-size: 0.8rem;
+    font-weight: bold;
+    margin: 3px 0px;
+}
+.bobble {
+    margin: 10px 0px;
+    text-align: left;
+}
+.bobble.mainUser {
+    text-align: right;
+}
+
+.boobleInner {
+    display: inline-block;
+    padding: 5px 2px;
+    border-radius: 5px;
+    background-color: #dadada;
+    color: black;
+}
+.bobble.mainUser .boobleInner {
+    background-color: blue;
+    color: white;
+}
+
+.caption {
+    font-weight: bold;
+    text-align: center;
+}
+.captionInner {
+    display: inline-block;
+    color: gray;
+    padding: 5px 5px;
+    font-size: 0.8rem;
+}

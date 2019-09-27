@@ -1,27 +1,27 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState } from 'react';
+
+import Timeline from './components/timeline';
+import data from './examples/lost-phone.json';
 import './App.css';
 
-
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+    const [index, setIndex] = useState(0);
+
+    const timeline = data.story.timeline.slice(0, index);
+    const users = data.story.users;
+    const main_user_id = data.story.main_user_id;
+
+
+    return (
+        <div className="App" onClick={() => setIndex(index + 1)}>
+            <Timeline
+                entries={timeline}
+                users={users}
+                mainUserId={main_user_id}
+            />
+        </div>
+    );
 }
 
 export default App;
