@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 
+import Header from './components/header';
 import Timeline from './components/timeline';
 import data from './examples/lost-phone.json';
 import './App.css';
@@ -15,6 +16,11 @@ function App() {
 
     return (
         <div className="App" onClick={() => setIndex(index + 1)}>
+            <Header
+                users={users}
+                mainUserId={main_user_id}
+                entries={timeline}
+            />
             <Timeline
                 entries={timeline}
                 users={users}

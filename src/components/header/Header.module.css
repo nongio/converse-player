@@ -1,0 +1,17 @@
+.header {
+
+    padding: 5px 5px;
+    background-color: #dadada;
+}
+
+.title {
+    font-weight: bold;
+}
+.lastSeen {
+    color: gray;
+}
+
+.status {
+    text-align: center;
+    font-weight: bold;
+}

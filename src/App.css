@@ -4,6 +4,9 @@ html, body, #root {
 .App {
   text-align: center;
   height: 100%;
+  max-width: 600px;
+  border: 10px solid black;
+  box-sizing: border-box;
 }
 
 .App-logo {

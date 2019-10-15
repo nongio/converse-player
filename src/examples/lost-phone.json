@@ -1,6 +1,6 @@
 {
   "story": {
-    "theme": "green",
+    "theme": "blue",
     "users": [
       {
         "id": 1,
@@ -18,16 +18,16 @@
       {
         "type": "context",
         "description": "Back at home...",
-        "timestamp": "0"
+        "timestamp": 1571158845
       },
       {
         "type": "message",
         "uid": "1",
         "content": {
           "type": "text",
-          "data": "Hey! I jost got home and I relised that I forgot my phone in the office..."
+          "data": "Hey! I just got home and I relised that I forgot my phone in the office..."
         },
-        "time": "19:02"
+        "timestamp": 1571158964
       },
       {
         "type": "message",
@@ -36,7 +36,7 @@
           "type": "text",
           "data": "who is texting?"
         },
-        "time": "19:03"
+        "timestamp": 1571159147
       },
       {
         "type": "message",
@@ -45,7 +45,7 @@
           "type": "text",
           "data": "for god sake it's me"
         },
-        "time": "19:05"
+        "timestamp": 1571159355
       },
       {
         "type": "message",
@@ -54,7 +54,7 @@
           "type": "text",
           "data": "??"
         },
-        "time": "19:07"
+        "timestamp": 1571159355
       }
     ]
   }

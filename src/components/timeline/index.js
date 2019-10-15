@@ -1,24 +1,17 @@
 import React from 'react';
 import style from './Timeline.module.css';
 import cx from 'classnames';
+import Message from '../message';
 
 const renderEntry = ( entry, users, mainUserId ) => {
     switch(entry.type) {
         case 'message':
-            const u = users[entry.uid - 1]; // sorry
-        const isMain = u.id === mainUserId;
-            return (
-                <div className={cx(style.bobble, {[style.mainUser]: isMain})}>
-                    <div className={style.boobleInner}>
-                        {!isMain && <div className={style.username}>
-                            {u.name}
-                        </div>}
-                        <div>
-                            {entry.content.data}
-                        </div>
-                    </div>
-                </div>
-            );
+            const props = {
+                entry,
+                users,
+                mainUserId,
+            };
+            return <Message {...props} />;
             break;
         case 'context':
             return (
