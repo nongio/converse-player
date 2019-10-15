@@ -1,0 +1,3 @@
+- handle typing duration
+- handle case with only typing but no message is sent
+- theming @msbrime
