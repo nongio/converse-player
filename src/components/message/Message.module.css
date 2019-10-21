@@ -1,21 +1,33 @@
 .bobble {
     margin: 10px 0px;
-    text-align: left;
+    padding: 0 20px;
+    display: flex;
+    flex-flow: column wrap;
+    width: 100%;
 }
+
 .bobble.mainUser {
-    text-align: right;
+  
 }
 
 .boobleInner {
     display: inline-block;
     padding: 6px 6px;
-    border-radius: 5px;
-    background-color: #dadada;
-    color: black;
+    background-color: #fff;
+    color:#43c1a9;
+    width: 70%;
+    align-self: flex-start;
+    text-align: left;
+    padding: 20px;
+    border-radius: 20px 20px 20px 0;
+    border: 1px solid #ededed;
 }
 .bobble.mainUser .boobleInner {
-    background-color: blue;
+    background-color: #43c1a9;
     color: white;
+    align-self: flex-end;
+    text-align: right;
+    border-radius: 20px 20px 0 20px;
 }
 
 .username {

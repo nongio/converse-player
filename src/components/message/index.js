@@ -9,9 +9,6 @@ const Message = ({entry, users, mainUserId}) => {
         return (
             <div className={cx(style.bobble, {[style.mainUser]: isMain})}>
                 <div className={style.boobleInner}>
-                    {!isMain && <div className={style.username}>
-                        {u.name}
-                    </div>}
                     <div>
                         {entry.content.data}
                     </div>

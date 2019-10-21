@@ -4,32 +4,15 @@
     min-height: 1rem;
     padding: 5px;
     box-sizing: border-box;
+    background-color: #effffc;
+    border-radius: 20px;
+    flex-grow: 1;
 }
 
 .username {
-
     font-size: 0.8rem;
     font-weight: bold;
     margin: 3px 0px;
-}
-.bobble {
-    margin: 10px 0px;
-    text-align: left;
-}
-.bobble.mainUser {
-    text-align: right;
-}
-
-.boobleInner {
-    display: inline-block;
-    padding: 6px 6px;
-    border-radius: 5px;
-    background-color: #dadada;
-    color: black;
-}
-.bobble.mainUser .boobleInner {
-    background-color: blue;
-    color: white;
 }
 
 .caption {
@@ -41,4 +24,4 @@
     color: gray;
     padding: 5px 5px;
     font-size: 0.8rem;
-}
+} 

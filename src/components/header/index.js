@@ -36,16 +36,17 @@ const Header = ({users, mainUserId, entries}) => {
     console.log(entries);
 
     return (
-        <>
+        <div className={cx(style.header)}>
         <div className={cx(style.status)}>
             <div className={cx()}>{moment.unix(currentTime).format("HH:mm")}</div>
         </div>
-        <div className={cx(style.header)}>
-            <div className={cx(style.title)}>{u.name}</div>
-            <div className={cx(style.lastSeen)}>{otherUserStatus}</div>
+        <div className={cx(style.details)}>
+            <div className={cx(style.avatar)} style={{backgroundImage:`url(${u.avatar})`}}></div>
+            <p className={cx(style.title)}>{u.name}</p>
+            <p className={cx(style.lastSeen)}>{otherUserStatus}</p>
 
         </div>
-        </>
+        </div>
     );
 };
 
