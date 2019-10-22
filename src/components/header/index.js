@@ -23,7 +23,6 @@ const Header = ({users, mainUserId, entries}) => {
     const end = moment.unix(otherUserLastVisit);
     const start = moment.unix(currentTime);
     const duration = moment.duration(start.diff(end));
-    console.log(duration.minutes());
     let otherUserStatus = '';
     if (duration.minutes() <= 3) {
         otherUserStatus = 'online';
@@ -32,8 +31,6 @@ const Header = ({users, mainUserId, entries}) => {
     } else {
         otherUserStatus = 'last seen yesterday';
     }
-
-    console.log(entries);
 
     return (
         <div className={cx(style.header)}>

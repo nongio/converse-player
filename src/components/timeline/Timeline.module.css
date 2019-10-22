@@ -5,14 +5,47 @@
     padding: 5px;
     box-sizing: border-box;
     background-color: #effffc;
-    border-radius: 20px;
+    border-radius: 12.5px;
     flex-grow: 1;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 1fr auto;
 }
 
 .username {
     font-size: 0.8rem;
     font-weight: bold;
     margin: 3px 0px;
+}
+
+.messageWindow{
+  overflow-y:scroll
+}
+
+.inputBox{
+  display: grid;
+  grid-template-columns: 1fr 30px;
+  grid-column-gap: 10px;
+  padding: 5px;
+  align-self: end;
+}
+
+.inputBox textarea{
+  grid-column: 1;
+  border: 1px solid #dfdfdf;
+  border-radius: 20px;
+  outline: none;
+  padding: 0 10px;
+  font-size: 1rem;
+  resize: none;
+  max-height: 110px;
+}
+
+.inputBox button{
+  grid-column: 2;
+  border: 1px solid #dfdfdf;
+  outline: none;
+  border-radius: 100px;
 }
 
 .caption {

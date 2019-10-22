@@ -1,5 +1,4 @@
 .header {
-    padding: 5px 5px;
     background-color: #333;
     border-radius: inherit;
 }
@@ -44,7 +43,6 @@
     padding: 0 15px;
     text-align: right;
     background-color: #222;
-    border-radius: inherit;
     color: #fff;
-    font-size: 0.85rem;
+    font-size: 0.7rem;
 }
