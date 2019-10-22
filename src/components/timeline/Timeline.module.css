@@ -9,7 +9,7 @@
     flex-grow: 1;
     display: grid;
     grid-template-columns: 100%;
-    grid-template-rows: 1fr auto;
+    grid-template-rows: 1fr 60px;
 }
 
 .username {
@@ -24,21 +24,24 @@
 
 .inputBox{
   display: grid;
-  grid-template-columns: 1fr 30px;
+  grid-template-columns: 1fr 40px;
   grid-column-gap: 10px;
   padding: 5px;
+  min-height: 50px;
   align-self: end;
 }
 
-.inputBox textarea{
+.inputBox p{
   grid-column: 1;
   border: 1px solid #dfdfdf;
   border-radius: 20px;
   outline: none;
   padding: 0 10px;
-  font-size: 1rem;
+  font-size: .9rem;
   resize: none;
-  max-height: 110px;
+  margin: 0;
+  background-color: #fff;
+  padding: 10px 15px;
 }
 
 .inputBox button{
@@ -46,6 +49,9 @@
   border: 1px solid #dfdfdf;
   outline: none;
   border-radius: 100px;
+  max-height: 40px;
+  min-height: 40px;
+  align-self: end;
 }
 
 .caption {
@@ -58,3 +64,34 @@
     padding: 5px 5px;
     font-size: 0.8rem;
 } 
+
+.loader{
+  display: inline-block;
+  height: 6px;
+  width: 6px;
+  background-color: #ccc;
+  border-radius: 10px;
+  animation: up-down .7s infinite;
+  margin-right: 5px;
+  transform: translateY(0);
+}
+
+.loader:nth-of-type(2){
+  animation-delay: .11666s;
+}
+.loader:last-of-type{
+  animation-delay: .2333s;
+  margin-right: 0;
+}
+
+
+@keyframes up-down{
+  50%{
+    transform: translateY(-125%);
+    opacity: .5;
+  }
+  100%{
+    transform: translateY(0);
+    opacity: 1;
+  }
+}

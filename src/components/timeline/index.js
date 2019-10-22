@@ -67,12 +67,12 @@ function InputBox({message,onSend}){
 
       updateTypedLetters(typedLetters + message[typedIndex]);
       updateTypedIndex(typedIndex+1);
-    },50);
+    },80);
 
   },[typedIndex, message]);
   
   return  (<div className={style.inputBox}> 
-    <textarea value={typedLetters} />
+    <p>{typedLetters}</p>
     <button type='button'>send</button>
     </div>
   );
@@ -80,23 +80,45 @@ function InputBox({message,onSend}){
 }
 
 const Timeline = ({entries, users, mainUserId,update, nextMessage}) => {
-  console.log(nextMessage);
+   const [shouldShowBuffer, updateShouldShowBuffer] = useState(false);
     useEffect(() => {
       if(nextMessage){
-      if(nextMessage.type === 'context' ||
-      !isMainUser(nextMessage.uid,mainUserId,users)){
-        update();
-      }
+        if(nextMessage.type === 'context'){
+          return update();
+        }
+
+        if(!isMainUser(nextMessage.uid,mainUserId,users)){
+          setTimeout(() => {
+            updateShouldShowBuffer(true);
+            setTimeout(() => {
+              updateShouldShowBuffer(false);//updateShouldShowBuffer(false);
+              update();
+            },2500);
+          },3000); 
+        }   
     }
-    },[nextMessage])
+    },[nextMessage]);
+
     return (
         <div className={style.main}>
             <div className={style.messageWindow}>
             {entries.map(e=>renderEntry(e, users, mainUserId, update))}
-            </div>
-            {renderInputField(nextMessage,mainUserId,users, update, nextMessage)}
+            {shouldShowBuffer ? renderBufferMessage() : null}
+            </div>   
+            {renderInputField(nextMessage,mainUserId,users, update, nextMessage)}     
         </div>
             );
+}
+
+function renderBufferMessage(){
+  return <Message entry={{content:{data:
+      <>
+      <span className={style.loader}/>
+      <span className={style.loader}/>
+      <span className={style.loader}/>
+      </>
+      }}} 
+  />
 }
 
 export default Timeline;
