@@ -7,18 +7,17 @@ import Player from './modules/player';
 import './App.css';
 
 function App() {
-
-  const main_user_id = data.story.main_user_id;
   const recipient = [...data.story.users]
-    .filter(user => user.id !== main_user_id)
+    .filter(user => user.id !== data.story.main_user_id)
     .pop();
   const [entries, updateEntries] = useState([]);
   const [isBuffering, updateBufferState] = useState(false);
   const [inputText,updateInputText] = useState('');
   const [timestamp, updateTimestamp] = useState(Date.now());
+  const [status,updateStatus] = useState('last seen yesterday');
 
   useEffect(() => {
-    const player = new Player(main_user_id, data.story.timeline);
+    const player = new Player(data.story.main_user_id, data.story.timeline);
 
     player.on('send', message => {
       updateInputText(prevInputText => {
@@ -59,6 +58,7 @@ function App() {
 
     player.on('incoming', () => {
       updateBufferState(true);
+      updateStatus('online');
     });
 
     player.play();
@@ -69,6 +69,7 @@ function App() {
       <Header
         user={recipient}
         timestamp={timestamp}
+        status={status}
           />
       <Timeline
         entries={entries}
