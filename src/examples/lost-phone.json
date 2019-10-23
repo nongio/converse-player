@@ -34,8 +34,19 @@
         "uid": "2",
         "content": {
           "type": "text",
+          "data": ""
+        },
+        "delay": 3000,
+        "timestamp": 1571159146
+      },
+      {
+        "type": "message",
+        "uid": "2",
+        "content": {
+          "type": "text",
           "data": "who is texting?"
         },
+        "delay": 3000,
         "timestamp": 1571159147
       },
       {
@@ -45,6 +56,7 @@
           "type": "text",
           "data": "for god sake it's me"
         },
+        "delay": 3000,
         "timestamp": 1571159355
       },
       {
@@ -54,7 +66,8 @@
           "type": "text",
           "data": "??"
         },
-        "timestamp": 1571159355
+        "delay": 4000,
+        "timestamp": 1571159356
       }
     ]
   }
