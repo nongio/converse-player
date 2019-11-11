@@ -1,5 +1,6 @@
 {
   "name": "converse-player",
+  "homepage": "https://nongio.github.io/converse-player",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

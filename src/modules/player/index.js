@@ -120,6 +120,7 @@ export default class Player{
 
   _flattenTimeline(timeline){
     const flatTimeline = new Map();
+    // eslint-disable-next-line no-unused-vars
     for(const entry of timeline){
       flatTimeline.set(entry.timestamp,entry);
     }

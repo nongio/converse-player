@@ -1,13 +1,68 @@
-# Use the latest 2.1 version of CircleCI pipeline process engine. See: https://circleci.com/docs/2.0/configuration-reference
-version: 2.1
-# Use a package of configuration called an orb.
-orbs:
-  # Declare a dependency on the welcome-orb
-  welcome: circleci/welcome-orb@0.3.1
-# Orchestrate or schedule a set of jobs
+version: 2
+jobs:
+  build:
+    docker:
+      - image: circleci/node:10.15.3
+    working_directory: ~/converse-player
+    steps:
+      - checkout
+      - run:
+          name: 'Install Dependencies'
+          command: |
+            echo Installing Dependencies
+            npm install
+      - run:
+          name: 'Build Project'
+          command: npm run build
+      - save_cache:
+          paths: 
+            - build
+          key: v1-build-{{ .Revision }}
+  
+  deploy:
+    docker:
+      - image: circleci/node:10.15.3
+    working_directory: ~/converse-player
+    steps:
+      - checkout
+      - run:
+          name: 'Setup repository' 
+          command: |
+            echo Commencing deploy to GitHub Pages
+            git config --global user.email "robot@converse-player.com"
+            git config --global user.name "robot"
+            git checkout --orphan gh-pages
+            shopt -s extglob
+            sudo rm -rf !('index.html'|'build') && sudo rm -f .gitignore
+      - add_ssh_keys:
+          fingerprints:
+            - 8f:6c:2c:61:46:f5:8c:03:24:b1:01:87:ed:d0:c6:eb
+      - restore_cache:
+          keys:
+            - v1-build-{{ .Revision }}
+      - run:
+          name: 'Deploy to GitHub Pages' 
+          command: |
+            cp -vaR build/. . && rm -rf build/
+            git add -f .
+            git commit -m "CircleCI build $CIRCLE_BUILD_NUM from $CIRCLE_BRANCH"
+            git push -f origin gh-pages
+            echo 'Site successfully deployed to GitHub Pages'
+
 workflows:
-  # Name the workflow "welcome"
-  welcome:
-    # Run the welcome/run job in its own container
+  version: 2
+  build-and-deploy:
     jobs:
-      - welcome/run
+      - build:
+          filters:
+            branches:
+              only:
+                - master
+                - develop
+      - deploy:
+          requires: 
+            - build
+          filters:
+            branches:
+              only:
+                - master
