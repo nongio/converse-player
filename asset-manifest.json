@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/converse-player/static/css/main.6ef5b06a.chunk.css",
+    "main.js": "/converse-player/static/js/main.429e8f37.chunk.js",
+    "main.js.map": "/converse-player/static/js/main.429e8f37.chunk.js.map",
+    "runtime~main.js": "/converse-player/static/js/runtime~main.ec38fd54.js",
+    "runtime~main.js.map": "/converse-player/static/js/runtime~main.ec38fd54.js.map",
+    "static/js/2.fb88cbfd.chunk.js": "/converse-player/static/js/2.fb88cbfd.chunk.js",
+    "static/js/2.fb88cbfd.chunk.js.map": "/converse-player/static/js/2.fb88cbfd.chunk.js.map",
+    "index.html": "/converse-player/index.html",
+    "precache-manifest.0451afc69d042bd82baf207488f2b467.js": "/converse-player/precache-manifest.0451afc69d042bd82baf207488f2b467.js",
+    "service-worker.js": "/converse-player/service-worker.js",
+    "static/css/main.6ef5b06a.chunk.css.map": "/converse-player/static/css/main.6ef5b06a.chunk.css.map"
+  }
+}
